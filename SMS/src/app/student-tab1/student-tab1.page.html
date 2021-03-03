@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar> 
+    <ion-buttons slot="start">
+    <ion-back-button defaultHref="/main?{{tabParams}}"></ion-back-button>
+  </ion-buttons>
+
+  <ion-title>Ders Detay</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="card card-md">
+
+    <ion-card-content class="card-content card-content-md">
+      <ion-grid class="grid">
+        <ion-row>
+          <ion-col style="color:rgb(207, 21, 21)">Ders Adı</ion-col>
+          <ion-col style="color:rgb(207, 21, 21)">Ücret</ion-col>
+          <ion-col style="color:rgb(207, 21, 21)">Süre</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let x of gridlist">
+          <ion-col>{{ x.NAME }}</ion-col>
+          <ion-col>{{ x.FEES }}</ion-col>
+          <ion-col>{{ x.DURATION }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

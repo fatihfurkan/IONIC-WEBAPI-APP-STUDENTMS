@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main?{{tabParams}}"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Ders İçerik</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item lines="inset">
+    <ion-label position="stacked">Ders</ion-label>
+    <ion-select [(ngModel)]="course1.ID" placeholder="Ders Seç" okText="Seç" cancelText="İptal">
+      <ion-select-option value="{{item.ID}}" *ngFor="let item of course">{{item.NAME}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+
+  <div class="ion-text-end">
+    <ion-button color="success" size="small" (click)="search()">Ara</ion-button>
+  </div>
+  <ion-card class="card card-md">
+
+    <ion-card-content class="card-content card-content-md">
+      <ion-grid class="grid">
+        <ion-row>
+          <ion-col style="color:rgb(207, 21, 21)">Ders Adı</ion-col>
+          <ion-col style="color:rgb(207, 21, 21)">İçerik</ion-col>
+          <ion-col style="color:rgb(207, 21, 21)">Link</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let x of gridlist">
+          <ion-col>{{ x.COURSENAME }}</ion-col>
+          <ion-col>{{ x.CONTENTDETAIL }}</ion-col>
+          <ion-col>{{ x.LINK }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

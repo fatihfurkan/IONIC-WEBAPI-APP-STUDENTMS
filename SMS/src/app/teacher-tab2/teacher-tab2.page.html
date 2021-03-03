@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+    <ion-back-button defaultHref="/main?{{tabParams}}"></ion-back-button>
+  </ion-buttons>
+
+  <ion-title>İçerik Kayıt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-item lines="inset">
+    <ion-label position="stacked">Ders</ion-label>
+    <ion-select [(ngModel)]="courseDetail.COURSEID" placeholder="Ders Seç" okText="Seç" cancelText="İptal">
+      <ion-select-option value="{{item.ID}}" *ngFor="let item of course">{{item.NAME}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item lines="inset">
+    <ion-label  position="stacked">İçerik</ion-label>
+    <ion-input [(ngModel)]="courseDetail.CONTENTDETAIL" type="text" ></ion-input>
+  </ion-item>
+  <ion-item lines="inset">
+    <ion-label  position="stacked">Link</ion-label>
+    <ion-input [(ngModel)]="courseDetail.LINK" type="text" ></ion-input>
+  </ion-item>
+
+  <br>
+  <div class="ion-text-end">
+  <ion-button color="success" size="small" (click)="save()">Kaydet</ion-button>
+  </div>
+
+</ion-content>

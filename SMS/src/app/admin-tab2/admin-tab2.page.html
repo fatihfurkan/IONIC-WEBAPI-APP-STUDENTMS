@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main?{{tabParams}}"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Ders Kayıt</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-item lines="inset">
+    <ion-label  position="stacked">Ders</ion-label>
+    <ion-input [(ngModel)]="course.NAME" type="text"  ></ion-input>
+  </ion-item>
+  
+  <ion-item lines="inset">
+    <ion-label  position="stacked">Ücret</ion-label>
+    <ion-input [(ngModel)]="course.FEES" type="number" ></ion-input>
+  </ion-item>
+  
+  <ion-item lines="inset">
+    <ion-label  position="stacked">Süre</ion-label>
+    <ion-input [(ngModel)]="course.DURATION" type="text" ></ion-input>
+  </ion-item>
+
+  <br>
+  <div class="ion-text-end">
+  <ion-button color="success" size="small" (click)="save()">Kaydet</ion-button>
+  </div>
+
+</ion-content>

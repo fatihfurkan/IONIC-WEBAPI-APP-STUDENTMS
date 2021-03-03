@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+
+    <div class="ion-text-end">
+      <pre style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{name}}   -   {{role}}  </pre>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--<p *ngIf="result == 1">Hello</p>-->
+
+  <br>
+
+  <ion-button class="itemS" shape="round" (click)="goAdmin(1)">
+    ÖĞRENCİ
+    <ion-icon slot="end" name="people-circle-outline"></ion-icon>
+  </ion-button>
+  <br>
+  <br>
+  <ion-button class="itemT" shape="round" (click)="goAdmin(2)">
+    ÖĞRETMEN
+    <ion-icon slot="end" name="school-outline"></ion-icon>
+  </ion-button>
+  <br>
+  <br>
+  <ion-button class="itemA" shape="round" (click)="goAdmin(3)">
+    ADMİN
+    <ion-icon slot="end" name="rocket-outline"></ion-icon>
+  </ion-button>
+
+</ion-content>

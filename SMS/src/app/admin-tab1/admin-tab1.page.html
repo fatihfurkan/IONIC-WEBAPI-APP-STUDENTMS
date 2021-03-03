@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/main?{{tabParams}}"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Kullanıcı Kayıt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-item lines="inset">
+    <ion-label  position="stacked">Adı</ion-label>
+    <ion-input [(ngModel)]="user.NAME" type="text"  ></ion-input>
+  </ion-item>
+  
+  <ion-item lines="inset">
+    <ion-label  position="stacked">Soyadı</ion-label>
+    <ion-input [(ngModel)]="user.SURNAME" type="text" ></ion-input>
+  </ion-item>
+  
+  <ion-item lines="inset">
+    <ion-label  position="stacked">Öğrenci Numarası</ion-label>
+    <ion-input [(ngModel)]="user.IDNUMBER" type="number" ></ion-input>
+  </ion-item>
+  
+  <ion-item lines="inset">
+    <ion-label  position="stacked">Telefon</ion-label>
+    <ion-input [(ngModel)]="user.PHONE" type="number" ></ion-input>
+  </ion-item>
+  
+  <ion-item lines="inset">
+    <ion-label  position="stacked">Adres</ion-label>
+    <ion-input [(ngModel)]="user.ADDRESS" type="text" ></ion-input>
+  </ion-item>
+  
+  <ion-item lines="inset">
+    <ion-label  position="stacked">E-mail</ion-label>
+    <ion-input [(ngModel)]="user.EMAIL" type="email" ></ion-input>
+  </ion-item>
+
+  <ion-item lines="inset">
+    <ion-label position="stacked">Şifre</ion-label>
+    <ion-input [(ngModel)]="user.PASSWORD"  type="password" ></ion-input>
+  </ion-item>
+
+  <ion-item lines="inset" >
+    <ion-label position="stacked">Rol</ion-label>
+    <ion-select [(ngModel)]="user.ROLEREF" placeholder="Rol Seç" okText="Seç" cancelText="İptal" >
+      <ion-select-option  value="{{item.ID}}" *ngFor="let item of roles" >{{item.ROLENAME}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <br>
+  <div class="ion-text-end">
+  <ion-button color="success" size="small" (click)="save()">Kaydet</ion-button>
+  </div>
+
+</ion-content>
